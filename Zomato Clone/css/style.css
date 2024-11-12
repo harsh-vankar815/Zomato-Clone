@@ -1,0 +1,459 @@
+/* ALERT THIS IS NOT RESPONSIVENESS DESIGN */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* CSS Variables for Colors */
+:root {
+    --primary-color: #ff5252;
+    --secondary-color: #e0e0e0;
+    --text-color: #fff;
+    --background-color: #ffffff;
+    --border-color: #ccc;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    background-image: url(/img/bg.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.header-container ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.header-container ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.header-container ul li a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(32, 255, 255);
+}
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1.5rem;
+    color: var(--text-color);
+    min-height: 60vh;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero img {
+    width: 300px;
+    margin-bottom: 1.5rem;
+}
+
+.hero .par {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    animation: typing 3s steps(30) 1s forwards;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--primary-color);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.search-bar {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+}
+
+.search-bar input {
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    width: 100%;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    fill: var(--primary-color);
+    width: 22px;
+    height: 22px;
+}
+
+/* Features Section */
+.food-delivery-info {
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: slideInUp 1.5s ease;
+}
+
+.food-delivery-info h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.food-delivery-info p {
+    font-size: 1rem;
+    color: #bdbdbd;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid pink;
+    border-radius: 8px;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(255, 82, 82, 0.3);
+}
+
+.feature-icon {
+    fill: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: #bdbdbd;
+}
+
+.order-now {
+    padding: 0.85rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color), #ff7961);
+    color: var(--text-color);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(255, 82, 82, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.order-now:hover {
+    transform: translateY(-3px);
+    background: #ff3333;
+}
+
+/* Card Styling */
+.card-container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+}
+
+.card {
+    width: 370px;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    /* Increased shadow for depth */
+    background-color: var(--background-color);
+    text-align: center;
+    transition: opacity 0.25s, transform 0.25s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
+    position: relative;
+    /* Positioning for pseudo-element */
+    overflow: hidden;
+    /* Ensure content does not overflow */
+}
+
+/* Adding a hover effect */
+.card:hover {
+    transform: translateY(0px) scale(1.05);
+    /* Lift and zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    /* Deeper shadow on hover */
+}
+
+/* Adding a gradient overlay */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+    /* Transition for smooth effect */
+    z-index: 1;
+    /* Ensure it's above background but below content */
+}
+
+.card:hover::before {
+    opacity: 1;
+    /* Show gradient on hover */
+}
+
+.card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Smooth transition for image zoom effect */
+    z-index: 0;
+    /* Ensure image is below overlay */
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+    z-index: 2;
+    /* Ensure text is above overlay */
+    position: relative;
+    /* Position for stacking context */
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #666;
+    padding: 0 15px 15px;
+    z-index: 2;
+    /* Ensure text is above overlay */
+    position: relative;
+    /* Position for stacking context */
+}
+
+/* Styling for Get the Zomato Part */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.ph-img>img {
+    width: 400px;
+    height: 435px;
+}
+
+.app-container {
+    height: 350px;
+    text-align: center;
+    max-width: 430px;
+    padding: 20px;
+}
+
+h1 {
+    display: flex;
+    padding-bottom: 23px;
+    font-size: 40px;
+    color: #333;
+}
+
+/* Option Styles */
+.option {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.option label {
+    font-size: 14px;
+    margin-left: 5px;
+    margin-right: 20px;
+    color: #333;
+}
+
+.option input[type="radio"] {
+    accent-color: var(--primary-color);
+}
+
+/* Input and Button Styles */
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-group input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+.input-group button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 14px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #d32f2f;
+}
+
+/* Download Section Styles */
+.download-section {
+    text-align: center;
+}
+
+.download-section p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    display: flex;
+}
+
+.store-button {
+    width: 150px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 2rem 5rem;
+    color: grey;
+    background-color: rgb(248, 248, 248);
+}
+
+.footer-container {
+    display: flex;
+    align-items: first baseline;
+    justify-content: space-evenly;
+    padding-bottom: 25px;
+}
+
+.foot h6 {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+nav a {
+    text-decoration: none;
+    color: gray;
+    font-size: 15px;
+}
+
+.foot-p {
+    padding-top: 25px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
